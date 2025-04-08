@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
   <style>
-    /* General styles */
+    /* General styling */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -43,14 +43,16 @@
     
     /* Main content styling */
     main {
-      margin-top: 70px; /* Adjust this value if you change your header height */
+      margin-top: 70px;  /* Adjust based on header height */
       padding: 20px;
     }
   </style>
 </head>
 <body>
+  <!-- Include the common header -->
   {% include header.html %}
-
+  
+  <!-- Page-specific content goes here -->
   <main>
     {{ content }}
   </main>
