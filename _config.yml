@@ -1,0 +1,3 @@
+# _config.yml
+title: Joshua Bisdorf's Portfolio
+baseurl: "https://joshuabisdorf.github.io"  # Change this if your site is hosted in a subdirectory (e.g., /my-portfolio)
