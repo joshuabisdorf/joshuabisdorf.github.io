@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Page</title>
+  <title>Projects</title>
   <style>
-    /* Basic CSS Reset */
+    /* Consistent styling with index.html */
     * {
       margin: 0;
       padding: 0;
@@ -46,11 +46,18 @@
     }
     section {
       flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       padding: 40px;
-      text-align: center;
+    }
+    .project {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
     }
     footer {
       background: rgba(255, 255, 255, 0.9);
@@ -62,17 +69,26 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to My Personal Page</h1>
+    <h1>My Projects</h1>
     <nav>
       <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact Me</a></li>
       </ul>
     </nav>
   </header>
   <section>
-    <p>This website is under construction. Please check back soon for updates!</p>
+    <!-- Replace the project placeholders with your own projects -->
+    <div class="project">
+      <h2>Project 1 Title</h2>
+      <p>[Description of your first project. What it does, the technologies used, and its purpose.]</p>
+    </div>
+    <div class="project">
+      <h2>Project 2 Title</h2>
+      <p>[Description of your second project. Include any special features or challenges you overcame.]</p>
+    </div>
+    <!-- Add more project sections as needed -->
   </section>
   <footer>
     <p>© 2025 Your Name. All Rights Reserved.</p>

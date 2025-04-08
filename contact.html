@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Page</title>
+  <title>Contact Me</title>
   <style>
-    /* Basic CSS Reset */
+    /* Consistent styling with index.html */
     * {
       margin: 0;
       padding: 0;
@@ -46,11 +46,42 @@
     }
     section {
       flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       padding: 40px;
-      text-align: center;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      background: #007acc;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #005f99;
     }
     footer {
       background: rgba(255, 255, 255, 0.9);
@@ -62,17 +93,31 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to My Personal Page</h1>
+    <h1>Contact Me</h1>
     <nav>
       <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
       </ul>
     </nav>
   </header>
   <section>
-    <p>This website is under construction. Please check back soon for updates!</p>
+    <form action="#" method="post">
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
   </section>
   <footer>
     <p>© 2025 Your Name. All Rights Reserved.</p>
