@@ -1,10 +1,75 @@
-<!-- index.html -->
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Bisdorf Portfolio</title>
+  <style>
+    /* Reset some default styles */
+    body, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    /* Fixed header styling */
+    header {
+      background-color: #333;
+      color: #fff;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    header nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 15px;
+      display: flex;
+      justify-content: space-around;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    /* Container styling for the main content */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 120px 20px 20px; /* Top padding accounts for the fixed header */
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="resume.html">RESUME</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
 
-<h1>Joshua Bisdorf</h1>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
+  <div class="container">
+    <h1>Joshua Bisdorf</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac orci condimentum, volutpat lacus id, condimentum dui. Sed vehicula elit a metus interdum, non porttitor felis porttitor.
+    </p>
+  </div>
+</body>
+</html>
