@@ -5,58 +5,17 @@ title: Resume
 
 <h1>RESUME</h1>
 <p>
-  Below is an embedded PDF of my resume using PDF.js (ES modules).
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo.
 </p>
 
-<!-- PDF Container -->
-<div class="pdf-container" style="text-align: center;">
-  <!-- The canvas element where the PDF will be rendered -->
-  <canvas id="pdf-canvas" style="border: 1px solid #ccc; margin: 0 auto;"></canvas>
+<!-- Embedded PDF: Adjusted to fully show the single-page PDF -->
+<div class="pdf-viewer" style="margin: 0 auto;">
+  <iframe src="https://drive.google.com/file/d/1B_dvU0o9h6moYLT8NrBUt2MunHqu1dQD/preview" width="640" height="480" allow="autoplay"></iframe>
 </div>
 
 <!-- Download Button -->
 <div class="download-resume" style="margin-top: 20px;">
-  <a href="/assets/Joshua_Bisdorf_Resume.pdf" download="Joshua_Bisdorf_Resume.pdf">
+  <a href="/assets/Joshua_Bisdorf_Resume.pdf" download>
     <button type="button">Download PDF</button>
   </a>
 </div>
-
-<!-- PDF.js via ES Modules -->
-<script type="module">
-  // Import functions and settings from the ES Module build of PDF.js
-  import { getDocument, GlobalWorkerOptions } from '/assets/pdfjs/pdf.mjs';
-
-  // Specify the worker source to the corresponding .mjs file
-  GlobalWorkerOptions.workerSrc = '/assets/pdfjs/pdf.worker.mjs';
-
-  // PDF file URL (adjust path if necessary or if using baseurl)
-  const url = "/assets/Joshua_Bisdorf_Resume.pdf";
-
-  // Asynchronously load the PDF document
-  getDocument(url).promise.then((pdf) => {
-    // Get the first page; adjust if your PDF has more pages
-    pdf.getPage(1).then((page) => {
-      const scale = 1.5; // Adjust scale to fit your PDF as needed
-      const viewport = page.getViewport({ scale });
-
-      // Get the canvas and adjust its dimensions based on the page viewport
-      const canvas = document.getElementById("pdf-canvas");
-      const context = canvas.getContext("2d");
-      canvas.width = viewport.width;
-      canvas.height = viewport.height;
-
-      // Prepare the render context for the page
-      const renderContext = {
-        canvasContext: context,
-        viewport: viewport
-      };
-
-      // Render the page onto the canvas
-      page.render(renderContext).promise.then(() => {
-        console.log("PDF page rendered successfully.");
-      });
-    });
-  }).catch((error) => {
-    console.error("Error loading PDF: ", error);
-  });
-</script>
