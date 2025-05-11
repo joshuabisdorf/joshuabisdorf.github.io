@@ -6,166 +6,100 @@ title: Joshua Bisdorf | Contact
 <h1>Contact</h1>
 
 <p class="lead">
-  Questions, feedback, or recruiting inquiries? Please reach out using the form
-  below.
+  Questions, feedback, or recruiting inquiries? Please reach out using the form below.
 </p>
 
-<form
-  id="contact-form"
-  action="https://formspree.io/f/mldjovjl"
-  method="POST"
-  novalidate
->
-  <fieldset>
-    <legend class="sr-only">Contact form</legend>
+<form id="contact-form"
+      action="https://formspree.io/f/mldjovjl"
+      method="POST"
+      style="max-width:600px;margin:0 auto"
+      novalidate>
 
-    <!-- Honeypot (spam‑trap) -->
-    <input
-      type="text"
-      name="_honey"
-      tabindex="-1"
-      autocomplete="off"
-      class="honeypot"
-    />
+  <!-- Honeypot -->
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honeypot">
 
-    <!-- Name + Email (two‑column on desktop) -->
-    <div class="two-col">
-      <div class="field">
-        <label for="name">Full name</label>
-        <input
-          class="input-field"
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your full name"
-          required
-        />
-      </div>
+  <!-- Full name -->
+  <div class="field">
+    <label for="name" class="sr-only">Full name</label>
+    <input class="input-field"
+           type="text"
+           id="name"
+           name="name"
+           placeholder="Your full name"
+           required>
+  </div>
 
-      <div class="field">
-        <label for="email">Email address</label>
-        <input
-          class="input-field"
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Your email address"
-          pattern="^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
-          required
-        />
-      </div>
-    </div>
+  <!-- Email -->
+  <div class="field">
+    <label for="email" class="sr-only">Email address</label>
+    <input class="input-field"
+           type="email"
+           id="email"
+           name="email"
+           placeholder="Your email address"
+           pattern="^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+           required>
+  </div>
 
-    <!-- Subject -->
-    <div class="field">
-      <label for="subject">Subject</label>
-      <input
-        class="input-field"
-        type="text"
-        id="subject"
-        name="subject"
-        placeholder="Subject"
-        required
-      />
-    </div>
+  <!-- Subject -->
+  <div class="field">
+    <label for="subject" class="sr-only">Subject</label>
+    <input class="input-field"
+           type="text"
+           id="subject"
+           name="subject"
+           placeholder="Subject"
+           required>
+  </div>
 
-    <!-- Message -->
-    <div class="field">
-      <label for="message">Message</label>
-      <textarea
-        class="input-field"
-        id="message"
-        name="message"
-        rows="5"
-        placeholder="Your message"
-        required
-      ></textarea>
-    </div>
+  <!-- Message -->
+  <div class="field">
+    <label for="message" class="sr-only">Message</label>
+    <textarea class="input-field"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your message"
+              required></textarea>
+  </div>
 
-    <!-- Submit -->
-    <div class="actions">
-      <button class="btn-primary" type="submit">Send Message</button>
-    </div>
-  </fieldset>
+  <!-- Submit -->
+  <div style="text-align:center;margin-top:20px;">
+    <button class="btn-primary" type="submit">Send Message</button>
+  </div>
 
-  <p class="privacy-note">
-    I’ll use your details solely to respond to this inquiry—nothing else.
-  </p>
+  <p class="privacy-note">I’ll use your details solely to respond to this inquiry—nothing else.</p>
 </form>
 
-<!-- Success / error message area -->
 <div id="form-status" class="form-status" aria-live="polite"></div>
 
 <script>
-  /* Lightweight Formspree AJAX handler */
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
+  const form   = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-
     const res = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" },
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
     });
-
     if (res.ok) {
       form.reset();
-      form.style.display = "none";
-      status.textContent = "Thanks! I’ll reply soon.";
+      form.style.display = 'none';
+      status.textContent = 'Thanks! I’ll reply soon.';
     } else {
-      status.textContent =
-        "Oops—something went wrong. Please email me directly.";
+      status.textContent = 'Oops—something went wrong. Please email me directly.';
     }
   });
 </script>
 
-<!-- Page‑specific styles -->
 <style>
-  /* Accessibility helpers */
-  .sr-only {
-    position: absolute;
-    left: -10000px;
-  }
-  .honeypot {
-    display: none;
-  }
-
-  /* Two‑column grid on wider screens */
-  .two-col {
-    display: grid;
-    gap: 1rem;
-  }
-  @media (min-width: 600px) {
-    .two-col {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  /* Small utilities unique to this page */
-  .field {
-    margin-bottom: 1rem;
-  }
-  .actions {
-    text-align: center;
-    margin-top: 1.25rem;
-  }
-  .lead {
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-    font-size: 1.1rem;
-  }
-  .privacy-note {
-    font-size: 0.9rem;
-    color: #555;
-    text-align: center;
-    margin-top: 1rem;
-  }
-  .form-status {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-weight: bold;
-  }
+/* Keep only the small, page‑specific bits */
+.sr-only  { position:absolute; left:-10000px; }
+.honeypot { display:none; }
+.field    { margin-bottom:15px; }
+.lead     { font-size:1.1rem; margin:0 0 1.5rem; }
+.privacy-note { font-size:0.9rem; color:#555; text-align:center; margin-top:1rem; }
+.form-status  { text-align:center; margin-top:1.5rem; font-weight:bold; }
 </style>

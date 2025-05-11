@@ -69,6 +69,8 @@ header nav a[aria-current="page"] {
 }
 
 /* ========== Global form + button styles ========== */
+*, *::before, *::after { box-sizing: border-box; }
+
 .input-field {               /* rule already lives in site.css */
   width: 100%;
   padding: 10px;
