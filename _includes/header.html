@@ -1,29 +1,33 @@
 <header role="banner">
   <nav role="navigation">
-    <a
-      href="{{ '/' | relative_url }}"
-      aria-current="{{ page.url == '/' | ternary: 'page', '' }}"
-      >HOME</a
-    >
+    <!-- HOME -->
+    <a href="{{ '/' | relative_url }}"
+      {% if page.url == '/' or page.url == '/index.html' %}
+        aria-current="page"
+      {% endif %}>
+      HOME
+    </a>
 
-    <a
-      href="{{ '/projects' | relative_url }}"
-      aria-current="{{ page.url == '/projects.html' | ternary: 'page', '' }}"
-      >PROJECTS</a
-    >
+    <!-- PROJECTS -->
+    <a href="{{ '/projects' | relative_url }}"
+      {% if page.url == '/projects/' or page.url == '/projects.html' %}
+        aria-current="page"
+      {% endif %}>
+      PROJECTS
+    </a>
 
-    <!-- Direct link to the PDF in a new tab -->
-    <a
-      href="{{ '/assets/Joshua_Bisdorf_Resume.pdf' | relative_url }}"
-      target="_blank"
-      rel="noopener"
-      >RESUME</a
-    >
+    <!-- RESUME (opens a PDF; never gets aria-current) -->
+    <a href="{{ '/assets/resume.pdf' | relative_url }}"
+      target="_blank" rel="noopener">
+      RESUME
+    </a>
 
-    <a
-      href="{{ '/contact' | relative_url }}"
-      aria-current="{{ page.url == '/contact.html' | ternary: 'page', '' }}"
-      >CONTACT</a
-    >
+    <!-- CONTACT -->
+    <a href="{{ '/contact' | relative_url }}"
+      {% if page.url == '/contact/' or page.url == '/contact.html' %}
+        aria-current="page"
+      {% endif %}>
+      CONTACT
+    </a>
   </nav>
 </header>
