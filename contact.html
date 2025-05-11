@@ -87,9 +87,29 @@ title: Joshua Bisdorf | Contact
     if (res.ok) {
       form.reset();
       form.style.display = 'none';
-      status.textContent = 'Thanks! I’ll reply soon.';
+
+      // Success message (plain text is fine)
+      status.textContent = 'Thank you for your submission! I’ll reply soon.';
     } else {
-      status.textContent = 'Oops—something went wrong. Please email me directly.';
+      // Clear any previous content
+      status.textContent = '';
+
+      // "Oops! Something went wrong. Please contact me via "
+      status.appendChild(
+        document.createTextNode(
+          'Oops! Something went wrong. Please contact me via '
+        )
+      );
+
+      // <a href="…">LinkedIn</a>
+      const link = document.createElement('a');
+      link.href   = 'https://www.linkedin.com/in/joshuabisdorf';
+      link.target = '_blank';
+      link.rel    = 'noopener';
+      link.textContent = 'LinkedIn';
+
+      status.appendChild(link);
+      status.appendChild(document.createTextNode('.'));
     }
   });
 </script>
