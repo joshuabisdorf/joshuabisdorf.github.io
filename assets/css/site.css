@@ -133,3 +133,26 @@ header nav a[aria-current="page"] {
   border-radius: 6px;
   padding: 0.75rem;
 }
+
+/* ===== Skills icon grid ===== */
+.skills-icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  /* auto‑fit makes columns adjust with viewport width */
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  justify-items: center;          /* center icons in their cells */
+  text-align: center;
+}
+
+.skills-icons i {
+  font-size: 2.4rem;              /* icon size */
+}
+
+.skills-icons span {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+}
