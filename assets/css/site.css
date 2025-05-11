@@ -40,6 +40,11 @@ header nav a[aria-current="page"] {
   text-decoration: underline;
 }
 
+header nav a[aria-current="page"] {
+  color: #b5b5b5;              /* light‑gray text */
+  filter: grayscale(100%);     /* desaturate in case you later add icons  */
+}
+
 /* ========== Global container ========== */
 .container {
   max-width: 960px;
