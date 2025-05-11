@@ -48,6 +48,7 @@ header nav a:hover {
 /* — Active‑page indicator — */
 header nav a[aria-current="page"] {
   color: #808080;                  /* light‑gray text */
+  text-decoration: underline;
 }
 
 /* ===========================================================
