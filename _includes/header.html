@@ -1,11 +1,35 @@
-<!-- _includes/header.html -->
-<header>
-    <nav>
-      <a href="/">HOME</a>
-      <a href="about">ABOUT</a>
-      <a href="projects">PROJECTS</a>
-      <a href="{{ '/Joshua_Bisdorf_Resume.pdf' | relative_url }}" target="_blank" rel="noopener">RESUME</a>
-      <a href="contact">CONTACT</a>
-    </nav>
-  </header>
-  
+<header role="banner">
+  <nav role="navigation">
+    <a
+      href="{{ '/' | relative_url }}"
+      aria-current="{{ page.url == '/' | ternary: 'page', '' }}"
+      >HOME</a
+    >
+
+    <a
+      href="{{ '/about' | relative_url }}"
+      aria-current="{{ page.url == '/about.html' | ternary: 'page', '' }}"
+      >ABOUT</a
+    >
+
+    <a
+      href="{{ '/projects' | relative_url }}"
+      aria-current="{{ page.url == '/projects.html' | ternary: 'page', '' }}"
+      >PROJECTS</a
+    >
+
+    <!-- Direct link to the PDF in a new tab -->
+    <a
+      href="{{ '/assets/resume.pdf' | relative_url }}"
+      target="_blank"
+      rel="noopener"
+      >RESUME</a
+    >
+
+    <a
+      href="{{ '/contact' | relative_url }}"
+      aria-current="{{ page.url == '/contact.html' | ternary: 'page', '' }}"
+      >CONTACT</a
+    >
+  </nav>
+</header>

@@ -1,55 +1,30 @@
-<!-- _layouts/default.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }}</title>
-  <style>
-    /* Your CSS for styling the header and main content */
-    body, ul, li {
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-    }
-    header {
-      background-color: #111111;
-      color: #ffffff;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-    header nav {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 15px;
-      display: flex;
-      justify-content: space-around;
-    }
-    header nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    header nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 120px 20px 20px; /* Top padding for fixed header */
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  {% include header.html %}
-  <div class="container">
-    {{ content }}
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{ page.title }}</title>
+    <meta name="description" content="Portfolio and projects of Joshua Bisdorf" />
+
+    <!-- Global stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/site.css' | relative_url }}"
+    />
+
+    <!-- Favicon (optional) -->
+    <!-- <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}"> -->
+  </head>
+
+  <body>
+    <!-- Skip‑link for keyboard/screen‑reader users -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    {% include header.html %}
+
+    <main id="main" class="container">
+      {{ content }}
+    </main>
+  </body>
 </html>
