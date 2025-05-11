@@ -1,4 +1,8 @@
-/* ========== Reset-like basics ========== */
+/* ===========================================================
+   1. Reset‑like basics
+   =========================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
 body,
 ul,
 li {
@@ -10,7 +14,9 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* ========== Header bar ========== */
+/* ===========================================================
+   2. Header bar & navigation
+   =========================================================== */
 header {
   background-color: #111;
   color: #fff;
@@ -35,25 +41,26 @@ header nav a {
   font-weight: bold;
 }
 
-header nav a:hover,
-header nav a[aria-current="page"] {
-  text-decoration: underline;
+header nav a:hover {
+  text-decoration: underline;      /* underline on hover only */
 }
 
+/* — Active‑page indicator — */
 header nav a[aria-current="page"] {
-  color: #b5b5b5;              /* light‑gray text */
-  filter: grayscale(100%);     /* desaturate in case you later add icons  */
+  color: #b5b5b5;                  /* light‑gray text */
 }
 
-/* ========== Global container ========== */
+/* ===========================================================
+   3. Layout helpers
+   =========================================================== */
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 120px 20px 20px; /* top‑padding offsets fixed header */
+  padding: 120px 20px 20px;        /* top‑padding offsets fixed header */
   text-align: center;
 }
 
-/* ========== Utility: skip link ========== */
+/* Skip‑link for accessibility */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -73,17 +80,15 @@ header nav a[aria-current="page"] {
   z-index: 10000;
 }
 
-/* ========== Global form + button styles ========== */
-*, *::before, *::after { box-sizing: border-box; }
-
-.input-field {               /* rule already lives in site.css */
+/* ===========================================================
+   4. Global form & button styles
+   =========================================================== */
+.input-field {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-
-  box-sizing: border-box;    /* add just this line */
 }
 
 .input-field:focus {
@@ -104,20 +109,23 @@ header nav a[aria-current="page"] {
   opacity: 0.9;
 }
 
-/* ===== Home‑page section formatting ===== */
+/* ===========================================================
+   5. Home‑page sections
+   =========================================================== */
 .home-section {
   margin: 3rem 0;
-  text-align: left;        /* keeps paragraphs left‑aligned even though .container is centered */
+  text-align: left;                /* paragraphs left‑aligned */
 }
 
-/* Optional: make section headings stand out */
 .home-section h2 {
   margin-bottom: 1rem;
   font-size: 1.6rem;
   color: #111;
 }
 
-/* ===== Skills grid ===== */
+/* ===========================================================
+   6. Skills grids
+   =========================================================== */
 .skills-grid {
   list-style: none;
   padding: 0;
@@ -139,21 +147,20 @@ header nav a[aria-current="page"] {
   padding: 0.75rem;
 }
 
-/* ===== Skills icon grid ===== */
+/* Optional icon grid (if you use Devicon) */
 .skills-icons {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   gap: 1rem;
-  /* auto‑fit makes columns adjust with viewport width */
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  justify-items: center;          /* center icons in their cells */
+  justify-items: center;
   text-align: center;
 }
 
 .skills-icons i {
-  font-size: 2.4rem;              /* icon size */
+  font-size: 2.4rem;
 }
 
 .skills-icons span {
